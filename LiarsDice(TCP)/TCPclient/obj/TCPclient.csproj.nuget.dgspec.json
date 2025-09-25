@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj",
+        "projectName": "TCPclient",
+        "projectPath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj",
+        "packagesPath": "C:\\Users\\06lukper\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\obj\\",
+=======
     "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj": {}
   },
   "projects": {
@@ -12,12 +25,13 @@
         "projectPath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj",
         "packagesPath": "C:\\Users\\Leo Jensen\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\obj\\",
+>>>>>>> 312c4d5206b25be8e6b3448b9599543fb02f2abe
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Leo Jensen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\06lukper\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

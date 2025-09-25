@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "EleaImGNGF0=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
+=======
   "dgSpecHash": "3gCp0DZAGAY=",
   "success": true,
   "projectFilePath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
+>>>>>>> 312c4d5206b25be8e6b3448b9599543fb02f2abe
   "expectedPackageFiles": [],
   "logs": []
 }
