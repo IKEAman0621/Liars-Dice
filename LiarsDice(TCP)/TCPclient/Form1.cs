@@ -7,14 +7,13 @@ namespace TCPclient;
 
 public partial class Form1 : Form
 {
-    TextBox textbox1;
-    TextBox textbox2;
-    TextBox textbox3;
+    Label[] dices = new Label[5];
 
-    Label label1;
-    Label label2;
+    Button bidButton;
+    Button callButton;
 
-    Button button1;
+    TextBox numberOfDice;
+    ComboBox faceValue;
 
     public Form1()
     {
@@ -22,77 +21,68 @@ public partial class Form1 : Form
         this.Width = 1200;
         this.Text = "Cups and Dice (client)";
 
-        textbox1 = new TextBox();
-        textbox1.Text = "127.0.0.1";
-        textbox1.Top = 15;
-        textbox1.Left = 215;
-        textbox1.Width = 150;
+        for (int i  = 0 ; i < dices.Length - 1; i++)
+        {
+            dices[i] = new Label();
+            dices[i].Text = "Die";
+            dices[i].Height = 100;
+            dices[i].Width = 100;
+            dices[i].BorderStyle = BorderStyle.FixedSingle;
 
-        textbox2 = new TextBox();
-        textbox2.Text = "5678";
-        textbox2.Top = 65;
-        textbox2.Left = 215;
-        textbox2.Width = 150;
+            this.Controls.Add(dices[i]);
+        }
 
-        textbox3 = new TextBox();
-        textbox3.Top = 150;
-        textbox3.Height = 80;
-        textbox3.Left = 15;
-        textbox3.Width = 350;
-        textbox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-        textbox3.Multiline = true;
-        textbox3.AcceptsReturn = true;
-        textbox3.AcceptsTab = true;
+        bidButton = new Button();
+        bidButton.Text = "bid";
+        bidButton.Click += bidButton_click;
 
 
-        label1 = new Label();
-        label1.Text = "IP-address";
-        label1.Top = 15;
-        label1.Left = 15;
-
-        label2 = new Label();
-        label2.Text = "Port";
-        label2.Top = 65;
-        label2.Left = 15;
+        callButton = new Button();
+        callButton.Text = "call";
+        callButton.Click += callButton_click;
 
 
-        button1 = new Button();
-        button1.Text = "send";
-        button1.Top = 470;
-        button1.Height = 50;
-        button1.Left = 15;
-        button1.Width = 350;
-        button1.Click += btn_click;
+        numberOfDice = new TextBox();
+        numberOfDice.Text = "";
 
 
-        this.Controls.Add(textbox1);
-        this.Controls.Add(textbox2);
-        this.Controls.Add(textbox3);
+        faceValue = new ComboBox();
+        faceValue.Items.Add("1");
+        faceValue.Items.Add("2");
+        faceValue.Items.Add("3");
+        faceValue.Items.Add("4");
+        faceValue.Items.Add("5");
+        faceValue.Items.Add("6");
+        faceValue.SelectedIndex = 0;
 
-        this.Controls.Add(label1);
-        this.Controls.Add(label2);
-        
-        this.Controls.Add(button1);
+
+        this.Controls.Add(bidButton);
+        this.Controls.Add(callButton);
+        this.Controls.Add(numberOfDice);
+        this.Controls.Add(faceValue);
     }
 
     private TcpClient client;
     private int port;
 
-    private void btn_click(object sender, EventArgs e)
+    private void Form1_load(object sender, EventArgs e)
     {
-        port = int.Parse(textbox2.Text);
+        checkBidButton();
+    }
 
-        IPAddress address = IPAddress.Parse(textbox1.Text);
-        client = new TcpClient();
-        client.NoDelay = true;
-        client.Connect(address, port);
+    private void checkBidButton()
+    {
+        bidButton.Enabled = false;
+    }
 
-        if (client.Connected)
-        {
-            byte[] outData = Encoding.Unicode.GetBytes(textbox3.Text);
-            client.GetStream().Write(outData, 0, outData.Length);
-            client.Close();
-        }
+    private void bidButton_click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void callButton_click(object sender, EventArgs e)
+    {
+        //call button clicked
     }
 }
 
