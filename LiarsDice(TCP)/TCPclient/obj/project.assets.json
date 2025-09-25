@@ -8,23 +8,23 @@
     "net9.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Leo Jensen\\.nuget\\packages\\": {},
+    "C:\\Users\\06lukper\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\.T4-IM\\PROA100TX\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj",
+      "projectUniqueName": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj",
       "projectName": "TCPclient",
-      "projectPath": "C:\\.T4-IM\\PROA100TX\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj",
-      "packagesPath": "C:\\Users\\Leo Jensen\\.nuget\\packages\\",
-      "outputPath": "C:\\.T4-IM\\PROA100TX\\LiarsDice(TCP)\\TCPclient\\obj\\",
+      "projectPath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\TCPclient.csproj",
+      "packagesPath": "C:\\Users\\06lukper\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPclient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Leo Jensen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\06lukper\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
