@@ -1,0 +1,14 @@
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.GeneratedMSBuildEditorConfig.editorconfig
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.AssemblyInfoInputs.cache
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.AssemblyInfo.cs
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.csproj.CoreCompileInputs.cache
+C:\.T4-IM\PROA100TX\TCP\TCPclient\bin\Debug\net9.0-windows\TCPclient.exe
+C:\.T4-IM\PROA100TX\TCP\TCPclient\bin\Debug\net9.0-windows\TCPclient.deps.json
+C:\.T4-IM\PROA100TX\TCP\TCPclient\bin\Debug\net9.0-windows\TCPclient.runtimeconfig.json
+C:\.T4-IM\PROA100TX\TCP\TCPclient\bin\Debug\net9.0-windows\TCPclient.dll
+C:\.T4-IM\PROA100TX\TCP\TCPclient\bin\Debug\net9.0-windows\TCPclient.pdb
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.dll
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\refint\TCPclient.dll
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.pdb
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.genruntimeconfig.cache
+C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\ref\TCPclient.dll
