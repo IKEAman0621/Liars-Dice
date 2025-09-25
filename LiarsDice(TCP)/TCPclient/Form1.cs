@@ -18,8 +18,8 @@ public partial class Form1 : Form
 
     public Form1()
     {
-        this.Height = 600;
-        this.Width = 400;
+        this.Height = 800;
+        this.Width = 1200;
         this.Text = "Cups and Dice (client)";
 
         textbox1 = new TextBox();
