@@ -20,7 +20,7 @@ public partial class Form1 : Form
     {
         this.Height = 600;
         this.Width = 400;
-        this.Text = "Liars Dice (client)";
+        this.Text = "Cups and Dice (client)";
 
         textbox1 = new TextBox();
         textbox1.Text = "127.0.0.1";

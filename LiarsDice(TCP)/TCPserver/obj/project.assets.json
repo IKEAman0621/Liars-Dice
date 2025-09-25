@@ -14,11 +14,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
       "projectName": "TCPserver",
       "projectPath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
       "packagesPath": "C:\\Users\\06lukper\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
+      "projectName": "TCPserver",
+      "projectPath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
+      "packagesPath": "C:\\Users\\Leo Jensen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\obj\\",
+>>>>>>> 312c4d5206b25be8e6b3448b9599543fb02f2abe
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

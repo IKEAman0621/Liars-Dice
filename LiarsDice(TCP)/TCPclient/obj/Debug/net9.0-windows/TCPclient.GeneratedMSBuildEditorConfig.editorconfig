@@ -14,7 +14,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TCPclient
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\06lukper\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\
+=======
+build_property.ProjectDir = C:\Users\06arvbor\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\
+>>>>>>> 312c4d5206b25be8e6b3448b9599543fb02f2abe
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

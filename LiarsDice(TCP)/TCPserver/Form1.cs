@@ -16,7 +16,7 @@ public partial class Form1 : Form
 
     public Form1()
     {
-        this.Text = "TCP server";
+        this.Text = "Table (server)";
         this.Width = 400;
         this.Height = 600;
 
