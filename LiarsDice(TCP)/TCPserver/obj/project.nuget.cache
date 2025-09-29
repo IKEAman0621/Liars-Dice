@@ -1,14 +1,18 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "EleaImGNGF0=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\06lukper\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
-=======
   "dgSpecHash": "3gCp0DZAGAY=",
   "success": true,
   "projectFilePath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
->>>>>>> 312c4d5206b25be8e6b3448b9599543fb02f2abe
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problem reading the cache file C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Leo Jensen\\Documents\\GitHub\\Liars-Dice\\LiarsDice(TCP)\\TCPserver\\TCPserver.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

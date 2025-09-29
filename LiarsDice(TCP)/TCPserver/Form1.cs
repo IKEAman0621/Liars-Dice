@@ -1,6 +1,9 @@
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace TCPserver;
 
@@ -73,31 +76,95 @@ public partial class Form1 : Form
     private TcpListener listener;
     private TcpClient client;
     private int port;
-    
+    private bool serverRunning = false;
+
+    private void Log(string message)
+    {
+        if (myTextbox3.InvokeRequired)
+        {
+            myTextbox3.Invoke(new Action(() => myTextbox3.AppendText(message + Environment.NewLine)));
+        }
+        else
+        {
+            myTextbox3.AppendText(message + Environment.NewLine);
+        }
+    }
+
     private void btn_click(object sender, EventArgs e)
     {
-        myButton1.Text = "Listening";
-
-        Task.Run(() =>
+        if (!serverRunning)
         {
-            port = int.Parse(myTextbox2.Text);
+            serverRunning = true;
+            myButton1.Text = "Listening...";
+            Thread listenerThread = new Thread(StartServer);
+            listenerThread.IsBackground = true;
+            listenerThread.Start();
+        }
+        else
+        {
+            StopServer();
+        }
+    }
 
-            listener = new TcpListener(IPAddress.Any, port);
-            listener.Start();
+    private void StartServer()
+    {
+        port = int.Parse(myTextbox2.Text);
+        listener = new TcpListener(IPAddress.Any, port);
+        listener.Start();
 
-            while (true)
+        while (serverRunning)
+        {
+            try
             {
                 client = listener.AcceptTcpClient();
+                Log("Client connected.");
 
-                byte[] inData = new byte[256];
-
-                int byteSize = client.GetStream().Read(inData, 0, inData.Length);
-
-                string message = Encoding.Unicode.GetString(inData, 0, byteSize);
-                Invoke((Action)(() => myTextbox3.Text += message + Environment.NewLine));
-
-                client.Close();
+                Thread clientThread = new Thread(() => HandleClient(client));
+                clientThread.IsBackground = true;
+                clientThread.Start();
             }
-        });
-    } 
+            catch (SocketException)
+            {
+                break; // Listener was stopped
+            }
+        }
+    }
+
+    private void HandleClient(TcpClient client)
+    {
+        NetworkStream stream = client.GetStream();
+        byte[] buffer = new byte[1024];
+
+        try
+        {
+            while (client.Connected)
+            {
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                if (bytesRead == 0) break; // Client disconnected
+
+                string message = Encoding.Unicode.GetString(buffer, 0, bytesRead);
+                Log("Client: " + message);
+
+                byte[] response = Encoding.Unicode.GetBytes("Server received: " + message);
+                stream.Write(response, 0, response.Length);
+            }
+        }
+        catch (Exception ex)
+        {
+            Log("Client error: " + ex.Message);
+        }
+        finally
+        {
+            client.Close();
+            Log("Client disconnected.");
+        }
+    }
+
+    private void StopServer()
+    {
+        serverRunning = false;
+        listener?.Stop();
+        myButton1.Text = "start";
+        Log("Server stopped.");
+    }
 }
