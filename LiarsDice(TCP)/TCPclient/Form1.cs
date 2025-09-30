@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Media;
 using Microsoft.VisualBasic;
+using System.Threading.Tasks;
 
 namespace TCPclient;
 
@@ -32,41 +33,66 @@ public partial class Form1 : Form
 
     public Form1()
     {
-        int playerCount = PlayerCount();
-        Dices = GetServerDice();
-
         this.Height = 800;
         this.Width = 1200;
         this.Text = "Cups and Dice (client)";
 
         IP = new TextBox();
         IP.Text = "127.0.0.1";
+        IP.Left = 1010;
+        IP.Top = 70;
+        IP.Height = 50;
+        IP.Width = 175; 
 
         Port = new TextBox();
         Port.Text = "5678";
+        Port.Left = 1010;
+        Port.Top = 125;
+        Port.Height = 50;
+        Port.Width = 175; 
 
         Name = new TextBox();
         Name.Text = "Player1";
+        Name.Left = 1010;
+        Name.Top = 15;
+        Name.Height = 50;
+        Name.Width = 175; 
 
         Connect = new Button();
         Connect.Text = "Connect to server";
         Connect.Click += ConnectToServer;
+        Connect.Left = 15;
+        Connect.Top = 15;
+        Connect.Height = 50;
+        Connect.Width = 350;
 
 
         bidButton = new Button();
         bidButton.Text = "bid";
         bidButton.Click += bidButton_click;
+        bidButton.Left = 15;
+        bidButton.Top = 475;
+        bidButton.Height = 50;
+        bidButton.Width = 175;
 
         callButton = new Button();
         callButton.Text = "call";
         callButton.Click += callButton_click;
+        callButton.Left = 15;
+        callButton.Top = 545;
+        callButton.Height = 50;
+        callButton.Width = 175;
 
 
         numberOfDice = new NumericUpDown();
         numberOfDice.Minimum = 1;
-        numberOfDice.Maximum = playerCount * Dices.Length;
+        numberOfDice.Maximum = 5;
         numberOfDice.DecimalPlaces = 0;
         numberOfDice.Value = 1;
+        numberOfDice.Left = 400;
+        numberOfDice.Top = 475;
+        numberOfDice.Height = 50;
+        numberOfDice.Width = 175;
         
 
         faceValue = new ComboBox();
@@ -77,10 +103,16 @@ public partial class Form1 : Form
         faceValue.Items.Add("5");
         faceValue.Items.Add("6");
         faceValue.SelectedIndex = 0;
-
+        faceValue.Left = 200;
+        faceValue.Top = 475;
+        faceValue.Height = 50;
+        faceValue.Width = 175;
         
         this.Controls.Add(IP);
         this.Controls.Add(Port);
+        this.Controls.Add(Name);
+        this.Controls.Add(Connect);
+
         this.Controls.Add(bidButton);
         this.Controls.Add(callButton);
         this.Controls.Add(numberOfDice);
@@ -122,7 +154,7 @@ public partial class Form1 : Form
                 client.Connect(IPaddress, port);
                 stream = client.GetStream();
 
-                byte[] outData = Encoding.Unicode.GetBytes(Name.Text);
+                byte[] outData = Encoding.Unicode.GetBytes($"JOIN(n{Name.Text})");
                 stream.Write(outData, 0, outData.Length);
 
                 receiveThread = new Thread(ReceiveDataLoop)
@@ -154,6 +186,8 @@ public partial class Form1 : Form
         try
         {
             byte[] buffer = new byte[1024];
+
+
             while (client != null && client.Connected)
             {
                 int bytesRead = stream.Read(buffer, 0, buffer.Length);
@@ -183,7 +217,24 @@ public partial class Form1 : Form
         client?.Close();
     }
 
+    private string SendRequest(string request)
+    {
+        if (client == null || !client.Connected)
+            throw new Exception("Not connected to server");
 
+        NetworkStream stream = client.GetStream();
+
+        // Send request
+        byte[] outData = Encoding.Unicode.GetBytes(request);
+        stream.Write(outData, 0, outData.Length);
+
+        // Wait for response
+        byte[] buffer = new byte[1024];
+        int bytesRead = stream.Read(buffer, 0, buffer.Length); // BLOCKS until data arrives
+        string response = Encoding.Unicode.GetString(buffer, 0, bytesRead).Trim();
+
+        return response;
+    }
 
     private void Dice_Paint(object sender, PaintEventArgs e, int DiceValue)
     {
@@ -193,13 +244,59 @@ public partial class Form1 : Form
 
     private int[] GetServerDice()
     {
-        //Fix this later
+        string response;
+        string[] subResponse;
+
+        if (client?.Connected == true)
+        {
+            response = SendRequest($"GETDICE(n{Name.Text})");
+            // Process the response to extract dice values
+
+            /*string message = $"GETDICE(n{Name.Text})";
+            byte[] outData = Encoding.Unicode.GetBytes(message);
+            stream.Write(outData, 0, outData.Length);*/
+
+            subResponse = response.Split('(');
+            string DataType = subResponse[0];
+            string Data = subResponse[1].TrimEnd(')');
+
+            string[] DiceValues = Data.Split(',');
+            int[] numbers = Array.ConvertAll(DiceValues, int.Parse);
+
+            return numbers;
+        }
+
+        
+
         return new int[] { 1, 2, 3, 4, 5 };
     }
 
     private int PlayerCount()
     {
-        //Fix this later
+        string response;
+        string[] subResponse;
+
+
+
+        if (client?.Connected == true)
+        {
+            response = SendRequest($"GETPLAYERCOUNT(n{Name.Text})");
+            // Process the response to extract player count
+
+            /*string message = $"GETPLAYERCOUNT(n{Name.Text})";
+            byte[] outData = Encoding.Unicode.GetBytes(message);
+            stream.Write(outData, 0, outData.Length);*/
+
+            subResponse = response.Split('(');
+            string DataType = subResponse[0];
+            string Data = subResponse[1].TrimEnd(')');
+
+            string PlayerCount = Data;
+
+            return int.Parse(PlayerCount);
+        }
+
+
         return 2;
     }
 
@@ -215,7 +312,7 @@ public partial class Form1 : Form
 
         if (client?.Connected == true)
         {
-            string message = $"BID {numberOfDice.Value} {faceValue.SelectedItem} {Name.Text}";
+            string message = $"BID(c{numberOfDice.Value} v{faceValue.SelectedItem} n{Name.Text})";
             byte[] outData = Encoding.Unicode.GetBytes(message);
             stream.Write(outData, 0, outData.Length);
         }
@@ -227,7 +324,7 @@ public partial class Form1 : Form
 
         if (client?.Connected == true)
         {
-            string message = $"CALL {Name.Text}";
+            string message = $"CALL(n{Name.Text})";
             byte[] outData = Encoding.Unicode.GetBytes(message);
             stream.Write(outData, 0, outData.Length);
         }

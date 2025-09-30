@@ -12,3 +12,18 @@ C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\refint\TCPclient.dll
 C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.pdb
 C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\TCPclient.genruntimeconfig.cache
 C:\.T4-IM\PROA100TX\TCP\TCPclient\obj\Debug\net9.0-windows\ref\TCPclient.dll
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\bin\Debug\net9.0-windows\TCPclient.exe
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\bin\Debug\net9.0-windows\TCPclient.deps.json
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\bin\Debug\net9.0-windows\TCPclient.runtimeconfig.json
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\bin\Debug\net9.0-windows\TCPclient.dll
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\bin\Debug\net9.0-windows\TCPclient.pdb
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.AssemblyInfoInputs.cache
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.AssemblyInfo.cs
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.csproj.CoreCompileInputs.cache
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.sourcelink.json
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.dll
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\refint\TCPclient.dll
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.pdb
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\TCPclient.genruntimeconfig.cache
+C:\Users\Leo Jensen\Documents\GitHub\Liars-Dice\LiarsDice(TCP)\TCPclient\obj\Debug\net9.0-windows\ref\TCPclient.dll

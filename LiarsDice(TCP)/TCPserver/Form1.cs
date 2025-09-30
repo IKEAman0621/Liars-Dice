@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -145,6 +146,8 @@ public partial class Form1 : Form
                 string message = Encoding.Unicode.GetString(buffer, 0, bytesRead);
                 Log("Client: " + message);
 
+                string respone = ProcessRequest(message);
+
                 byte[] response = Encoding.Unicode.GetBytes("Server received: " + message);
                 stream.Write(response, 0, response.Length);
             }
@@ -166,5 +169,45 @@ public partial class Form1 : Form
         listener?.Stop();
         myButton1.Text = "start";
         Log("Server stopped.");
+    }
+
+    private string ProcessRequest(string message)
+    {
+        Random rand = new Random();
+        string[] request = message.Split('(');
+
+        switch (request[0])
+        {
+            case "GETDICE":
+                // Return dice values
+                int[] diceValues = new int[5];
+
+                for (int i = 0; i < 5; i++)
+                {
+                    diceValues[i] = rand.Next(1, 7);
+                }
+
+                string.Join(", ", diceValues);
+            return $"DICE ({string.Join(", ", diceValues)})";
+
+                
+            case "GETPLAYERCOUNT":
+                // Return player count
+                return "PLAYERCOUNT(4)"; // Example response
+
+
+            case "CALL":
+                // Handle call action
+                return "CALLACK (Success)"; // Example response
+
+
+            case "BID":
+                // Handle bid action
+                return "BIDACK (Success)"; // Example response
+
+
+            default:
+                return "ERROR (Unknown command)";
+        }
     }
 }
