@@ -39,21 +39,21 @@ public partial class Form1 : Form
 
         IP = new TextBox();
         IP.Text = "127.0.0.1";
-        IP.Left = 1010;
+        IP.Left = 985;
         IP.Top = 70;
         IP.Height = 50;
         IP.Width = 175; 
 
         Port = new TextBox();
         Port.Text = "5678";
-        Port.Left = 1010;
+        Port.Left = 985;
         Port.Top = 125;
         Port.Height = 50;
         Port.Width = 175; 
 
         Name = new TextBox();
         Name.Text = "Player1";
-        Name.Left = 1010;
+        Name.Left = 985;
         Name.Top = 15;
         Name.Height = 50;
         Name.Width = 175; 
@@ -167,7 +167,7 @@ public partial class Form1 : Form
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                //MessageBox.Show("Error: " + ex.Message);
                 Connect.Text = "Connect to server";
                 return;
             }
@@ -196,7 +196,7 @@ public partial class Form1 : Form
                     string message = Encoding.Unicode.GetString(buffer, 0, bytesRead);
                     Invoke(new Action(() =>
                     {
-                        MessageBox.Show("Received: " + message);
+                        //MessageBox.Show("Received: " + message);
                     }));
                 }
             }
@@ -205,7 +205,7 @@ public partial class Form1 : Form
         {
             Invoke(new Action(() =>
             {
-                MessageBox.Show("Disconnected: " + ex.Message);
+                //MessageBox.Show("Disconnected: " + ex.Message);
                 Disconnect();
             }));
         }

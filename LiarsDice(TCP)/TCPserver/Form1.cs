@@ -44,7 +44,7 @@ public partial class Form1 : Form
         myTextbox3.Text = "";
         myTextbox3.Left = 15;
         myTextbox3.Top = 150;
-        myTextbox3.Height = 75;
+        myTextbox3.Height = 250;
         myTextbox3.Width = 350;
 
         myTextbox3.AcceptsReturn = true;
@@ -59,7 +59,7 @@ public partial class Form1 : Form
         myLabel2.Top = 70;
 
         myLabel3 = new Label();
-        myLabel3.Text = "Message:";
+        myLabel3.Text = "Server log:";
         myLabel3.Left = 25;
         myLabel3.Top = 125;
         myLabel3.Height = 50;
@@ -95,6 +95,7 @@ public partial class Form1 : Form
     {
         if (!serverRunning)
         {
+            Log("Server started.");
             serverRunning = true;
             myButton1.Text = "Listening...";
             Thread listenerThread = new Thread(StartServer);
